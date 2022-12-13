@@ -13,6 +13,8 @@ Using your knowledge about scope and variable declarations in JavaScript, look a
 
 #### Episode 1
 
+<!-- this will be error because of re-asign at line 29 -->
+
 ```js
 const scenario = {
   murderer: 'Miss Scarlet',
@@ -23,13 +25,15 @@ const scenario = {
 const declareMurderer = function() {
   return `The murderer is ${scenario.murderer}.`;
 }
-
+// const can't be changed
 const verdict = declareMurderer();
 console.log(verdict);
 ```
 
 #### Episode 2
 
+
+<!-- another error? -->
 ```js
 const murderer = 'Professor Plum';
 
@@ -45,7 +49,7 @@ changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
 ```
-
+<!-- first mrs peacock second verdict prof plum due to murderer begin redifined in block delareMurderer -->
 #### Episode 3
 
 ```js
@@ -62,7 +66,7 @@ console.log('First Verdict: ', firstVerdict);
 const secondVerdict = `The murderer is ${murderer}.`;
 console.log('Second Verdict: ', secondVerdict);
 ```
-
+<!-- declareallSuspects : miss scarlet, prof plu, colonel mustard suspects = suspectthree is mrs peacock -->
 #### Episode 4
 
 ```js
@@ -80,6 +84,7 @@ console.log(suspects);
 console.log(`Suspect three is ${suspectThree}.`);
 ```
 
+<!-- should see revolver as weapon because we changed a property of constant this is allowed -->
 #### Episode 5
 
 ```js
@@ -101,7 +106,7 @@ changeWeapon('Revolver');
 const verdict = declareWeapon();
 console.log(verdict);
 ```
-
+<!-- it will be mrs white because its a let and the declaration is changing the top variable -->
 #### Episode 6
 
 ```js
@@ -125,7 +130,7 @@ changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
 ```
-
+<!-- its mr green -->
 #### Episode 7
 
 ```js
@@ -155,7 +160,7 @@ changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
 ```
-
+<!-- colonel mustard in the dinning room with the candle stick -->
 #### Episode 8
 
 ```js
@@ -194,7 +199,7 @@ changeScenario();
 const verdict = declareWeapon();
 console.log(verdict);
 ```
-
+<!-- its prof plum -->
 #### Episode 9
 
 ```js
