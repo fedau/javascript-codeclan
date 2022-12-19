@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react'
 
 function App() {
+
+const [greeting, setGreeting] = useState("Hello programmer"); 
+const [total, setTotal] = useState(0);
+const handleClick = (name) => {
+  setGreeting("Hello button clicker your name is: " +name )
+}
+const deposit = () =>{
+  setTotal(total +10)
+}
+const withdraw = () =>{
+  if (total > 0){
+  setTotal(total - 10)
+}}
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+<div className='body'>
+
+<h1> {greeting} </h1>
+<button onClick = {() => handleClick("Fedau")}>Change greeting</button>
+<p>Total: £{total}</p>
+<button onClick={deposit}>Deposit</button>
+<button onClick={withdraw}>Withdraw</button>
+
+</div>
+);
 }
 
 export default App;
