@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.boxDiv{
+background: linear-gradient(to top, #dedaf0ba, #e7daf0cc), url(../public/farm.webp) no-repeat top center;
+
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +40,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+h1{
+  color: black;
+}
+
+h2, h4, p{
+  color: black ;
+  /* text-transform:; */
 }
