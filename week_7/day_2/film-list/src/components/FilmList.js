@@ -5,7 +5,7 @@ import SingleFilm from "./SingleFilm"
 
 const FilmList = ({films}) => {
 
-        const filmNodes = films.map(film => {
+        const filmNodes = films.map((film) => {
             return(
                 <SingleFilm key={film.id} name={film.name} url={film.url}/>
              )
