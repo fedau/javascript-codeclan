@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CountryDetail from '../components/CountryDetail';
 import CountryList from '../components/CountryList';
+import CountrySelector from '../components/CountrySelector';
 import './CountriesContainer.css';
 
 const CountryContainer = () => {
@@ -24,7 +25,8 @@ const CountryContainer = () => {
 
     return (
         <div className="main-container">
-            <CountryList countries={countries} onCountryClicked={onCountryClicked} />
+            {/* <CountryList countries={countries} onCountryClicked={onCountryClicked} /> */}
+            <CountrySelector countries={countries} onCountrySelected={onCountryClicked}/>
             {selectedCountry? <CountryDetail country={selectedCountry}/> : "Click a country for more info"}
         </div>
     )
