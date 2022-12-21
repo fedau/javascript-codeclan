@@ -1,0 +1,30 @@
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid brown;
+  width: 30%;
+  margin: 10px auto  ;
+
+}
+
+.text{
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+button{
+  width: 30px;
+  height: 25px;
+  background-color: brown;
+  margin: 5px;
+  
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+
+}
