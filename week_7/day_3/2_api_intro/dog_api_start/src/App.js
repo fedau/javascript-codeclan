@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import './App.css';
 
 function App() {
@@ -9,9 +9,11 @@ function App() {
      fetch("https://dog.ceo/api/breeds/image/random")
      .then(response => response.json())
      .then(data => setDogImgUrl(data.message))
-
-
   }
+
+  useEffect(() => {
+    fetchDog()
+  },[])
 
   return (
     <div id="app">

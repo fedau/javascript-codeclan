@@ -1,0 +1,33 @@
+import React, { useState, useEffect } from 'react';
+import CountryDetail from '../components/CountryDetail';
+import CountryList from '../components/CountryList';
+import './CountriesContainer.css';
+
+const CountryContainer = () => {
+    const [countries, setCountries] = useState([]);
+    const [selectedCountry, setSelectedCountry] = useState(null);
+
+
+    useEffect(() => {
+      getCountries();
+    }, [])
+
+    const onCountryClicked = function(country){
+        setSelectedCountry(country)
+    }
+
+    const getCountries = function(){
+        fetch('https://restcountries.com/v3.1/all')
+        .then(res => res.json())
+        .then(countries => setCountries(countries))
+    }
+
+    return (
+        <div className="main-container">
+            <CountryList countries={countries} onCountryClicked={onCountryClicked} />
+            {selectedCountry? <CountryDetail country={selectedCountry}/> : "Click a country for more info"}
+        </div>
+    )
+}
+
+export default CountryContainer;
