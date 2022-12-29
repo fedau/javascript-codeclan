@@ -35,7 +35,7 @@ const WeatherContainer = () => {
             setImg("https://darksky.net/images/weather-icons/clear-day.png")
           }
 
-          else if (weather.description  === "Light drizzle"){
+          else if (weather.description  === "Light drizzle" || weather.description === "Light rain"){
             setImg("https://windy.app//storage/posts/November2021/04-light-rain-weather-symbol-windyapp.jpg")}
           
           else {
