@@ -21,9 +21,12 @@ function App() {
       }
       tempTotal = 0
       setNewTotal(false);
-    }
 
+    }
     setRunningTotal(parseFloat("" + tempTotal + number));
+    // else {(runningTotal === 'Infinity')
+    //   setRunningTotal("ERROR")
+    //  }
   }
 
   const handleDecimal = () => {
@@ -94,8 +97,17 @@ function App() {
 
   const divide = (number) => {
     let calculatedNumber = parseFloat(previousTotal) / parseFloat(number);
-    setRunningTotal(calculatedNumber);
-    setCalculatedTotal(calculatedNumber);
+    if (calculatedNumber == "Infinity"){
+      setRunningTotal("ERROR");
+    }
+    else{
+
+      setRunningTotal(calculatedNumber);
+      setCalculatedTotal(calculatedNumber);
+    }
+    
+
+
   }
 
 
