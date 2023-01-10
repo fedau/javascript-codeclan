@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Filter from '../components/Filter'
 import ListStories from '../components/ListStories'
 
 const MainContainer = () => {
@@ -29,6 +30,7 @@ const MainContainer = () => {
   return (
     <div>
         <h1>Main stuff</h1>
+        <Filter/>
         <ListStories stories={stories}/>
       
     </div>

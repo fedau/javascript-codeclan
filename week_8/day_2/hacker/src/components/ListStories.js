@@ -7,7 +7,7 @@ const ListStories = ({stories}) => {
         <div key={story.id}>
          
             <p key={story.id}> <b>{story.title}</b> <br/>{story.by} <br/> {story.url}</p>
-            <a key={story.id} href='{stroy.url}'> Click here</a>
+            {/* <a key={story.id} href='{stroy.url}'> Click here</a> */}
 
         </div>
 
