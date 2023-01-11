@@ -1,19 +1,18 @@
 import React from 'react'
+import StoryItems from './StoryItems'
 
 const ListStories = ({stories}) => {
+    const storyItemNodes = stories.map((story, index) =>{
+        return <StoryItems key={index} story={story}/>
+    })
   return (
       <>
-      {stories.map((story) => (
-        <div key={story.id}>
-         
-            <p key={story.id}> <b>{story.title}</b> <br/>{story.by} <br/> {story.url}</p>
-            {/* <a key={story.id} href='{stroy.url}'> Click here</a> */}
-
-        </div>
-
-    
-        ))}
-        </>
+ <ul>
+    {/* <StoryItems stories={storyItemNodes}/>
+     */}
+     {storyItemNodes}
+ </ul>
+        </> 
 
   )
 }

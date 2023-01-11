@@ -1,10 +1,21 @@
-import React from 'react'
+import React , {useState, useEffect} from 'react'
 
-const Filter = () => {
+
+const Filter = ({filterData}) => {
+    const [searchTerm, setSearchTerm] = useState('')
+
+    const handleInputChange = (event) => {
+        setSearchTerm(event.target.value)
+    }
+
+    useEffect(() => {
+        filterData(searchTerm);
+    }, [searchTerm])
+
   return (
     <div>
-        filter?
-        <input/>
+        
+        <input type="text" value={searchTerm} onChange={handleInputChange}/>
       
     </div>
   )
